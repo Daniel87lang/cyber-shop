@@ -10,24 +10,27 @@ const DEFAULT_AFFILIATE = 'https://amzn.to/3RjAPvR';
 const PRODUCTS = [
   {
     id: 'p1',
-    name: 'Teclado Mecânico RGB Pro',
-    price: 459.90,
+    name: 'Protetor Contra Clamper Iclamper Pocket',
+    price: 0,
+    priceLabel: 'Veja o preço direto na Amazon',
     rating: 4.7,
     img: 'assets/p1.svg',
     link: DEFAULT_AFFILIATE
   },
   {
     id: 'p2',
-    name: 'Mouse Gamer Óptico 16000 DPI',
-    price: 269.00,
+    name: 'Teclado Gamer Premium',
+    price: 0,
+    priceLabel: 'Preço e estoque na Amazon',
     rating: 4.5,
     img: 'assets/p2.svg',
     link: DEFAULT_AFFILIATE
   },
   {
     id: 'p3',
-    name: 'Headset Wireless 7.1',
-    price: 689.50,
+    name: 'Mouse Gamer Ultra RGB',
+    price: 0,
+    priceLabel: 'Confira o preço oficial',
     rating: 4.8,
     img: 'assets/p3.svg',
     link: DEFAULT_AFFILIATE
@@ -49,7 +52,7 @@ function renderProducts(){
       <div class="media"><img loading="lazy" src="${p.img}" alt="${p.name}"></div>
       <div class="product-info">
         <h4>${p.name}</h4>
-        <div class="price">${money(p.price)}</div>
+        <div class="price">${p.price > 0 ? money(p.price) : p.priceLabel || 'Confira na Amazon'}</div>
         <div class="rating">${'★'.repeat(Math.round(p.rating))} <span class="muted">${p.rating}</span></div>
       </div>
       <div class="product-actions">
