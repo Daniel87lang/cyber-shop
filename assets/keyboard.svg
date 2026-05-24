@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#33d2ff"/>
+      <stop offset="1" stop-color="#9b5cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#071021"/>
+  <g transform="translate(120,200)">
+    <rect width="960" height="320" rx="18" fill="rgba(255,255,255,0.03)" stroke="url(#g)" stroke-width="2"/>
+    <g transform="translate(20,20)">
+      <!-- Keys -->
+      <g fill="rgba(255,255,255,0.06)">
+        <rect x="0" y="0" width="880" height="64" rx="8" />
+      </g>
+      <g transform="translate(12,12)" fill="white" opacity="0.06">
+        <!-- row of small keys -->
+        <!-- generate keys visually -->
+        <g>
+        </g>
+      </g>
+      <!-- accent light -->
+      <rect x="8" y="220" width="880" height="64" rx="8" fill="url(#g)" opacity="0.12"/>
+      <text x="440" y="180" text-anchor="middle" fill="#e8f6ff" font-family="Poppins, Arial" font-size="28">Teclado Mecânico Gamer RGB</text>
+    </g>
+  </g>
+</svg>

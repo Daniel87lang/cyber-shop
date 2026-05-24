@@ -1,191 +1,357 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Loja Gamer — Cyber Shop</title>
-  <meta name="description" content="Cyber Shop — vitrine premium para periféricos gamers. Produtos afiliados da Amazon com curadoria e ofertas." />
-  <meta name="theme-color" content="#071021">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cyber Shop | Setup Gamer Premium</title>
+
+  <meta
+    name="description"
+    content="Cyber Shop — periféricos gamers premium, setups RGB e acessórios tecnológicos com links oficiais da Amazon."
+  />
+
+  <meta name="theme-color" content="#071021" />
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Cyber Shop — Loja Gamer Premium">
-  <meta property="og:description" content="Seleção premium de teclados, mouses, headsets e acessórios para gamers. Confira ofertas e compre via Amazon.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/og-image.png">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <meta property="og:title" content="Cyber Shop | Loja Gamer Premium" />
+  <meta
+    property="og:description"
+    content="Os melhores periféricos gamers e acessórios RGB com visual cyberpunk premium."
+  />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Ícones -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Loading screen -->
+  <!-- LOADING -->
   <div id="loading" class="loading-overlay">
+
     <div class="loader">
-      <div class="logo-glow">Cyber Shop</div>
+
+      <h1 class="logo-glow">
+        Cyber Shop
+      </h1>
+
       <div class="spinner"></div>
+
     </div>
+
   </div>
 
-  <!-- partículas de fundo -->
+  <!-- BACKGROUND -->
   <canvas id="particles"></canvas>
 
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <header class="navbar glass" id="navbar">
+
     <div class="container nav-inner">
+
+      <!-- LOGO -->
       <div class="brand">
-        <div class="logo">CS</div>
+
+        <div class="logo">
+          CS
+        </div>
+
         <div class="brand-text">
           <h1>Cyber Shop</h1>
-          <span>Gamer · Premium</span>
+          <span>Gaming Store</span>
         </div>
+
       </div>
 
+      <!-- MENU -->
       <nav class="nav-links" id="nav-links">
+
         <a href="#hero">Início</a>
         <a href="#produtos">Produtos</a>
         <a href="#categorias">Categorias</a>
         <a href="#promos">Promoções</a>
+
       </nav>
 
+      <!-- AÇÕES -->
       <div class="nav-actions">
-        <button class="btn ghost" id="cart-btn">Carrinho <span id="cart-count">0</span></button>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
+
+        <button class="btn ghost" id="cart-btn">
+
+          <i class="fa-solid fa-cart-shopping"></i>
+
+          Carrinho
+
+          <span id="cart-count">0</span>
+
         </button>
+
+        <!-- MENU MOBILE -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Abrir Menu"
+        >
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
       </div>
+
     </div>
+
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section id="hero" class="hero">
+
+    <div class="hero-overlay"></div>
+
     <div class="hero-inner container">
+
+      <!-- TEXTO -->
       <div class="hero-text">
-        <h2>Equipamentos gamers com tecnologia de ponta</h2>
-        <p>Seleção premium de periféricos com descontos exclusivos — compre com segurança na Amazon.</p>
+
+        <span class="badge">
+          ⚡ Setup Gamer Premium
+        </span>
+
+        <h2>
+          Monte o Setup Gamer dos Seus Sonhos
+        </h2>
+
+        <p>
+          Periféricos premium, RGB neon e acessórios gamers
+          selecionados com curadoria exclusiva.
+        </p>
+
         <div class="hero-cta">
-          <a href="#produtos" class="btn primary animated">Ver produtos</a>
-          <a href="#promos" class="btn outline">Ofertas</a>
+
+          <a href="#produtos" class="btn primary animated">
+            Ver Produtos
+          </a>
+
+          <a href="#promos" class="btn outline">
+            Promoções
+          </a>
+
         </div>
-        <div class="hero-cta-info">
-          <p>Use nosso link oficial de afiliado para comprar: <a href="https://amzn.to/3RjAPvR" target="_blank">https://amzn.to/3RjAPvR</a></p>
+
+        <!-- LINK AFILIADO -->
+        <div class="hero-affiliate">
+
+          <p>
+            🔥 Confira ofertas exclusivas na Amazon:
+          </p>
+
+          <a
+            href="https://amzn.to/3RjAPvR"
+            target="_blank"
+            class="affiliate-link"
+          >
+            Comprar na Amazon
+          </a>
+
         </div>
+
       </div>
+
+      <!-- IMAGEM -->
       <div class="hero-image">
-        <img loading="lazy" src="assets/hero.svg" alt="Gamer setup">
+
+        <img
+          src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop"
+          alt="Setup Gamer"
+          loading="lazy"
+        />
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- Painel de edição rápida -->
-  <section class="section admin-panel container">
-    <div class="admin-top">
-      <h3 class="section-title">Editor rápido de produtos</h3>
-      <button id="toggleAdmin" class="btn outline">Abrir editor</button>
-    </div>
-    <div id="adminPanel" class="admin-content glass">
-      <div class="admin-row">
-        <label>Produto
-          <select id="adminProduct"></select>
-        </label>
-      </div>
-      <div class="admin-row">
-        <label>Nome do produto
-          <input id="adminName" type="text" placeholder="Nome do produto" />
-        </label>
-      </div>
-      <div class="admin-row">
-        <label>Preço
-          <input id="adminPrice" type="number" step="0.01" placeholder="0.00" />
-        </label>
-      </div>
-      <div class="admin-row">
-        <label>Link afiliado
-          <input id="adminLink" type="url" placeholder="https://amzn.to/..." />
-        </label>
-      </div>
-      <div class="admin-actions">
-        <button id="adminUpdate" class="btn primary">Atualizar produto</button>
-        <button id="adminReset" class="btn ghost">Recarregar padrões</button>
-      </div>
-      <p class="admin-note">As alterações são aplicadas imediatamente e salvas no navegador. Para publicar para todos, é preciso atualizar o código no GitHub.</p>
-    </div>
-  </section>
-
-  <!-- Produtos -->
+  <!-- PRODUTOS -->
   <section id="produtos" class="section produtos container">
-    <h3 class="section-title">Produtos em destaque</h3>
-    <div id="products" class="products-grid">
-      <!-- Cards gerados pelo JavaScript -->
+
+    <div class="section-header">
+
+      <h3 class="section-title">
+        Produtos em Destaque
+      </h3>
+
+      <p>
+        Equipamentos gamers premium selecionados especialmente para você.
+      </p>
+
     </div>
+
+    <div id="products" class="products-grid"></div>
+
   </section>
 
-  <!-- Categorias -->
+  <!-- CATEGORIAS -->
   <section id="categorias" class="section categorias container">
-    <h3 class="section-title">Categorias</h3>
+
+    <h3 class="section-title">
+      Categorias
+    </h3>
+
     <div class="categories-grid">
-      <button class="chip">Teclados</button>
-      <button class="chip">Mouse</button>
-      <button class="chip">Headsets</button>
-      <button class="chip">RGB</button>
-      <button class="chip">Setup</button>
+
+      <button class="chip">⌨️ Teclados</button>
+      <button class="chip">🖱️ Mouse</button>
+      <button class="chip">🎧 Headsets</button>
+      <button class="chip">💡 RGB</button>
+      <button class="chip">🖥️ Setup</button>
+
     </div>
+
   </section>
 
-  <!-- Promoções -->
+  <!-- PROMOÇÕES -->
   <section id="promos" class="section promos container">
-    <h3 class="section-title">Promoções</h3>
+
+    <h3 class="section-title">
+      Promoções
+    </h3>
+
     <div class="promo-cards">
+
       <div class="promo-card glass">
-        <h4>Desconto Cyber Monday</h4>
-        <p class="big">-25% em seleções premium</p>
-        <a class="btn primary" href="#produtos">Aproveitar</a>
+
+        <span class="promo-tag">
+          🔥 Oferta
+        </span>
+
+        <h4>
+          Desconto Gamer
+        </h4>
+
+        <p class="big">
+          Até 25% OFF em acessórios RGB premium.
+        </p>
+
+        <a
+          href="https://amzn.to/43w6xZi"
+          target="_blank"
+          class="btn primary"
+        >
+          Aproveitar
+        </a>
+
       </div>
+
       <div class="promo-card glass neon">
-        <h4>Destaque ROG</h4>
-        <p class="big">Bundle exclusivo com frete grátis</p>
-        <a class="btn outline" href="#produtos">Ver Bundle</a>
+
+        <span class="promo-tag">
+          ⚡ Destaque
+        </span>
+
+        <h4>
+          Setup RTX
+        </h4>
+
+        <p class="big">
+          Performance extrema para gamers profissionais.
+        </p>
+
+        <a
+          href="https://amzn.to/3RjAPvR"
+          target="_blank"
+          class="btn outline"
+        >
+          Ver Produto
+        </a>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- Carrinho lateral -->
-  <aside id="cart" class="cart">
-    <div class="cart-header">
-      <h4>Carrinho</h4>
-      <button id="cart-close" class="close">✕</button>
-    </div>
-    <div id="cart-items" class="cart-items"></div>
-    <div class="cart-footer">
-      <div class="subtotal">Subtotal: <strong id="cart-subtotal">R$0,00</strong></div>
-      <a id="checkout" class="btn primary full" href="#" target="_blank">Finalizar na Amazon</a>
-    </div>
-  </aside>
-
-  <!-- Back to top -->
-  <button id="backTop" class="back-top">↑</button>
-
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer container">
+
     <div class="foot-grid">
+
       <div>
-        <h4>Cyber Shop</h4>
-        <p>Afiliados Amazon · Loja curada para gamers</p>
+
+        <h4>
+          Cyber Shop
+        </h4>
+
+        <p>
+          Loja gamer afiliada Amazon com foco em setup premium.
+        </p>
+
       </div>
+
       <div>
-        <h5>Links</h5>
+
+        <h5>
+          Navegação
+        </h5>
+
         <a href="#produtos">Produtos</a>
         <a href="#categorias">Categorias</a>
+        <a href="#promos">Promoções</a>
+
       </div>
+
       <div>
-        <h5>Redes</h5>
+
+        <h5>
+          Redes
+        </h5>
+
         <div class="socials">
-          <a href="#">Twitter</a>
-          <a href="#">YouTube</a>
-          <a href="#">Discord</a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+
         </div>
+
       </div>
+
     </div>
-    <div class="copyright">© <span id="year"></span> Cyber Shop • Todos os direitos reservados</div>
+
+    <div class="copyright">
+
+      © 2026 Cyber Shop — Todos os direitos reservados.
+
+    </div>
+
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>

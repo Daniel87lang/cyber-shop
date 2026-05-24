@@ -68,6 +68,7 @@ body{
 .admin-row input,
 .admin-row select{margin-top:6px;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:var(--text)}
 .admin-actions{display:flex;gap:12px;flex-wrap:wrap}
+.admin-actions .btn{min-width:140px}
 .admin-note{font-size:13px;color:var(--muted);margin-top:6px}
 .hero-image img:hover{transform:translateY(-8px)}
 
