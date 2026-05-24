@@ -5,7 +5,7 @@
 // - Para usar um link padrão em todos os produtos, altere `DEFAULT_AFFILIATE`
 // ==================================================
 
-const DEFAULT_AFFILIATE = 'https://amzn.to/43w6xZi';
+const DEFAULT_AFFILIATE = 'https://amzn.to/3RjAPvR';
 
 const PRODUCTS = [
   {
