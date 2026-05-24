@@ -132,6 +132,10 @@ body{
 .product-card{transition:transform .36s ease,box-shadow .36s ease}
 .product-card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 30px 80px rgba(59,59,120,0.18),0 0 40px rgba(155,92,255,0.06),0 0 18px rgba(51,210,255,0.04)}
 .product-card .price{background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.affiliate-highlight{margin-top:12px;padding:12px;border-radius:12px;background:rgba(51,210,255,0.08);border:1px solid rgba(51,210,255,0.15);color:#e8f6ff;display:flex;flex-direction:column;gap:6px}
+.affiliate-highlight span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--neon-blue)}
+.affiliate-highlight a{color:var(--text);word-break:break-all;font-weight:600;text-decoration:none;}
+.affiliate-highlight a:hover{text-decoration:underline;color:var(--neon-purple)}
 
 /* Cart scrollbar smaller */
 .cart-items::-webkit-scrollbar{width:8px}

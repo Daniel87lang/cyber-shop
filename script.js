@@ -56,6 +56,10 @@ function renderProducts(){
         <a class="btn buy" href="${p.link}" target="_blank">Comprar na Amazon</a>
         <button class="btn" onclick="addToCart('${p.id}')">Adicionar</button>
       </div>
+      <div class="affiliate-highlight">
+        <span>Link oficial de afiliado:</span>
+        <a href="${p.link}" target="_blank">${p.link}</a>
+      </div>
     `;
     container.appendChild(card);
   });
