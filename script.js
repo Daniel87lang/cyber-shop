@@ -11,7 +11,7 @@ const PRODUCTS = [
     price: 459.90,
     rating: 4.7,
     img: 'assets/p1.svg',
-    link: 'https://www.amazon.com/dp/EXAMPLE1?tag=SEU_TAG'
+    link: 'https://amzn.to/43w6xZi'
   },
   {
     id: 'p2',
@@ -19,7 +19,7 @@ const PRODUCTS = [
     price: 269.00,
     rating: 4.5,
     img: 'assets/p2.svg',
-    link: 'https://www.amazon.com/dp/EXAMPLE2?tag=SEU_TAG'
+    link: 'https://amzn.to/43w6xZi'
   },
   {
     id: 'p3',
@@ -27,12 +27,9 @@ const PRODUCTS = [
     price: 689.50,
     rating: 4.8,
     img: 'assets/p3.svg',
-    link: 'https://www.amazon.com/dp/EXAMPLE3?tag=SEU_TAG'
+    link: 'https://amzn.to/43w6xZi'
   }
 ];
-
-/* Estado do carrinho */
-let CART = {};
 
 /* --- Utils --- */
 const money = v => v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
