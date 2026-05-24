@@ -1,13 +1,14 @@
 // ==================================================
 // script.js — Loja Gamer (vanilla JS)
-// - Produtos são definidos na array `PRODUCTS` abaixo
+// - Produtos são definidos na array `DEFAULT_PRODUCTS` abaixo
 // - Atualize links e imagens diretamente nesta array
 // - Para usar um link padrão em todos os produtos, altere `DEFAULT_AFFILIATE`
 // ==================================================
 
 const DEFAULT_AFFILIATE = 'https://amzn.to/3RjAPvR';
+const STORAGE_PRODUCTS_KEY = 'cs_products_v1';
 
-const PRODUCTS = [
+const DEFAULT_PRODUCTS = [
   {
     id: 'p1',
     name: 'Protetor Contra Clamper Iclamper Pocket',
@@ -36,6 +37,9 @@ const PRODUCTS = [
     link: DEFAULT_AFFILIATE
   }
 ];
+
+let PRODUCTS = DEFAULT_PRODUCTS.map(product => ({ ...product }));
+
 
 /* --- Utils --- */
 const money = v => v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
@@ -66,6 +70,60 @@ function renderProducts(){
     `;
     container.appendChild(card);
   });
+}
+
+function loadProductsData(){
+  const saved = localStorage.getItem(STORAGE_PRODUCTS_KEY);
+  if(!saved) return;
+  try{
+    const parsed = JSON.parse(saved);
+    if(Array.isArray(parsed) && parsed.length){
+      PRODUCTS = parsed.map(item => {
+        const template = DEFAULT_PRODUCTS.find(base => base.id === item.id) || {};
+        return {...template, ...item};
+      });
+    }
+  }catch(e){console.warn('Erro ao carregar produtos salvos', e)}
+}
+
+function saveProductsData(){
+  try{ localStorage.setItem(STORAGE_PRODUCTS_KEY, JSON.stringify(PRODUCTS)); }catch(e){console.warn('Não foi possível salvar produtos', e)}
+}
+
+function populateAdminOptions(){
+  const select = $('#adminProduct');
+  if(!select) return;
+  select.innerHTML = PRODUCTS.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+}
+
+function loadAdminForm(id){
+  const product = PRODUCTS.find(p => p.id === id) || PRODUCTS[0];
+  if(!product) return;
+  $('#adminName').value = product.name;
+  $('#adminPrice').value = product.price > 0 ? product.price : '';
+  $('#adminLink').value = product.link;
+}
+
+function updateAdminProduct(){
+  const selectedId = $('#adminProduct').value;
+  const product = PRODUCTS.find(p => p.id === selectedId);
+  if(!product) return;
+  product.name = $('#adminName').value || product.name;
+  const priceValue = parseFloat($('#adminPrice').value);
+  product.price = Number.isFinite(priceValue) ? priceValue : 0;
+  product.link = $('#adminLink').value || DEFAULT_AFFILIATE;
+  saveProductsData();
+  renderProducts();
+  populateAdminOptions();
+  loadAdminForm(selectedId);
+}
+
+function resetAdminProducts(){
+  PRODUCTS = DEFAULT_PRODUCTS.map(product => ({...product}));
+  saveProductsData();
+  renderProducts();
+  populateAdminOptions();
+  loadAdminForm(PRODUCTS[0].id);
 }
 
 /* --- Carrinho --- */
@@ -114,7 +172,10 @@ function updateCartUI(){
 
 /* --- UI interactions --- */
 document.addEventListener('DOMContentLoaded',()=>{
+  loadProductsData();
   renderProducts();
+  populateAdminOptions();
+  loadAdminForm(PRODUCTS[0]?.id);
   // carregar carrinho salvo (persistência simples)
   const saved = localStorage.getItem('cs_cart_v1');
   if(saved){ try{ CART = JSON.parse(saved); }catch(e){ CART = {} } }
@@ -161,6 +222,22 @@ document.addEventListener('DOMContentLoaded',()=>{
     const y = (e.clientY - window.innerHeight/2)/80;
     if(heroImg) heroImg.style.transform = `translate(${x}px,${y}px)`;
   });
+
+  // Admin panel
+  const adminToggle = $('#toggleAdmin');
+  const adminPanel = $('#adminPanel');
+  if(adminToggle && adminPanel){
+    adminToggle.addEventListener('click',()=>{
+      adminPanel.classList.toggle('open');
+      adminToggle.textContent = adminPanel.classList.contains('open') ? 'Fechar editor' : 'Abrir editor';
+    });
+  }
+  const adminSelect = $('#adminProduct');
+  if(adminSelect){
+    adminSelect.addEventListener('change', e => loadAdminForm(e.target.value));
+  }
+  $('#adminUpdate')?.addEventListener('click', updateAdminProduct);
+  $('#adminReset')?.addEventListener('click', resetAdminProducts);
 
   // Close nav when link clicked (mobile)
   document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('nav-links').classList.remove('open')}));

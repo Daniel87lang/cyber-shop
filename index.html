@@ -74,6 +74,41 @@
     </div>
   </section>
 
+  <!-- Painel de edição rápida -->
+  <section class="section admin-panel container">
+    <div class="admin-top">
+      <h3 class="section-title">Editor rápido de produtos</h3>
+      <button id="toggleAdmin" class="btn outline">Abrir editor</button>
+    </div>
+    <div id="adminPanel" class="admin-content glass">
+      <div class="admin-row">
+        <label>Produto
+          <select id="adminProduct"></select>
+        </label>
+      </div>
+      <div class="admin-row">
+        <label>Nome do produto
+          <input id="adminName" type="text" placeholder="Nome do produto" />
+        </label>
+      </div>
+      <div class="admin-row">
+        <label>Preço
+          <input id="adminPrice" type="number" step="0.01" placeholder="0.00" />
+        </label>
+      </div>
+      <div class="admin-row">
+        <label>Link afiliado
+          <input id="adminLink" type="url" placeholder="https://amzn.to/..." />
+        </label>
+      </div>
+      <div class="admin-actions">
+        <button id="adminUpdate" class="btn primary">Atualizar produto</button>
+        <button id="adminReset" class="btn ghost">Recarregar padrões</button>
+      </div>
+      <p class="admin-note">As alterações são aplicadas imediatamente e salvas no navegador. Para publicar para todos, é preciso atualizar o código no GitHub.</p>
+    </div>
+  </section>
+
   <!-- Produtos -->
   <section id="produtos" class="section produtos container">
     <h3 class="section-title">Produtos em destaque</h3>
