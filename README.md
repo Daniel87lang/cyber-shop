@@ -13,7 +13,8 @@ Como trocar produtos
 - Para imagens locais, coloque-as em uma pasta `assets/` e use caminhos relativos.
 
 Como trocar links afiliados
-- No objeto de cada produto em `script.js`, altere o campo `link` para sua URL afiliada da Amazon.
+- No arquivo `script.js`, altere a constante `DEFAULT_AFFILIATE` para sua URL afiliada.
+- Se quiser um link diferente por produto, altere o campo `link` de cada item em `PRODUCTS`.
 - Os botões usam `target="_blank"` por padrão.
 
 Como trocar imagens
